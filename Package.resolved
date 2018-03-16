@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "JSBridge",
+        "repositoryURL": "https://github.com/LinusU/JSBridge",
+        "state": {
+          "branch": null,
+          "revision": "997d2ce32486173f4e569f638de7cbf146226667",
+          "version": "1.0.0-alpha.2"
+        }
+      },
+      {
+        "package": "PromiseKit",
+        "repositoryURL": "https://github.com/mxcl/PromiseKit",
+        "state": {
+          "branch": null,
+          "revision": "62c61dd712da2f29a339cc2b46bb28a6a90086c6",
+          "version": "6.2.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

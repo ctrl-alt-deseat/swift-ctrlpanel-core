@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF_176245980012 /* CtrlpanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_534266335393 /* CtrlpanelCore.swift */; };
+		BF_340829228288 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_345097450918 /* PromiseKit.framework */; };
+		BF_486215110438 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_542052630695 /* State.swift */; };
+		BF_534671818523 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_542052630695 /* State.swift */; };
+		BF_551863875129 /* JSSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_841687221075 /* JSSource.swift */; };
+		BF_558025311791 /* JSBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_638131173870 /* JSBridge.framework */; };
+		BF_664193354045 /* CtrlpanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_534266335393 /* CtrlpanelCore.swift */; };
+		BF_726584555715 = {isa = PBXBuildFile; fileRef = FR_296951278235 /* CtrlpanelCore.framework */; };
+		BF_734410478334 /* JSBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_199841985118 /* JSBridge.framework */; };
+		BF_785906354725 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_794320042762 /* PromiseKit.framework */; };
+		BF_839257793256 = {isa = PBXBuildFile; fileRef = FR_777771946555 /* CtrlpanelCore.framework */; };
+		BF_846441612700 /* JSSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_841687221075 /* JSSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FR_199841985118 /* JSBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSBridge.framework; sourceTree = "<group>"; };
+		FR_296951278235 /* CtrlpanelCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CtrlpanelCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_345097450918 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
+		FR_534266335393 /* CtrlpanelCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtrlpanelCore.swift; sourceTree = "<group>"; };
+		FR_542052630695 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		FR_638131173870 /* JSBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSBridge.framework; sourceTree = "<group>"; };
+		FR_777771946555 /* CtrlpanelCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CtrlpanelCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_794320042762 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
+		FR_841687221075 /* JSSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBP_29695127823 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_558025311791 /* JSBridge.framework in Frameworks */,
+				BF_340829228288 /* PromiseKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBP_77777194655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_734410478334 /* JSBridge.framework in Frameworks */,
+				BF_785906354725 /* PromiseKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G_1952740716080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				G_2883690153011 /* Carthage */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		G_2262017438925 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FR_638131173870 /* JSBridge.framework */,
+				FR_345097450918 /* PromiseKit.framework */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		G_2262017442691 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				FR_199841985118 /* JSBridge.framework */,
+				FR_794320042762 /* PromiseKit.framework */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		G_2883690153011 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				G_2262017442691 /* Mac */,
+				G_2262017438925 /* iOS */,
+			);
+			name = Carthage;
+			path = Carthage/Build;
+			sourceTree = "<group>";
+		};
+		G_8448771205358 = {
+			isa = PBXGroup;
+			children = (
+				G_1952740716080 /* Frameworks */,
+				G_8620238527590 /* Products */,
+				G_8934779235101 /* Sources */,
+			);
+			sourceTree = "<group>";
+		};
+		G_8620238527590 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FR_296951278235 /* CtrlpanelCore.framework */,
+				FR_777771946555 /* CtrlpanelCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		G_8934779235101 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FR_534266335393 /* CtrlpanelCore.swift */,
+				FR_841687221075 /* JSSource.swift */,
+				FR_542052630695 /* State.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		NT_296951278235 /* CtrlpanelCore_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_296951278235 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_iOS" */;
+			buildPhases = (
+				SBP_29695127823 /* Sources */,
+				FBP_29695127823 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CtrlpanelCore_iOS;
+			productName = CtrlpanelCore_iOS;
+			productReference = FR_296951278235 /* CtrlpanelCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		NT_777771946555 /* CtrlpanelCore_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_777771946555 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_macOS" */;
+			buildPhases = (
+				SBP_77777194655 /* Sources */,
+				FBP_77777194655 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CtrlpanelCore_macOS;
+			productName = CtrlpanelCore_macOS;
+			productReference = FR_777771946555 /* CtrlpanelCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P_5997327226270 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+			};
+			buildConfigurationList = CL_599732722627 /* Build configuration list for PBXProject "CtrlpanelCore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			mainGroup = G_8448771205358;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				NT_296951278235 /* CtrlpanelCore_iOS */,
+				NT_777771946555 /* CtrlpanelCore_macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SBP_29695127823 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_176245980012 /* CtrlpanelCore.swift in Sources */,
+				BF_551863875129 /* JSSource.swift in Sources */,
+				BF_534671818523 /* State.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SBP_77777194655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_664193354045 /* CtrlpanelCore.swift in Sources */,
+				BF_846441612700 /* JSSource.swift in Sources */,
+				BF_486215110438 /* State.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BC_331190821215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-macOS";
+				PRODUCT_NAME = CtrlpanelCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BC_479945831424 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		BC_494446443698 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-iOS";
+				PRODUCT_NAME = CtrlpanelCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_623976747838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-iOS";
+				PRODUCT_NAME = CtrlpanelCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BC_659055029247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-macOS";
+				PRODUCT_NAME = CtrlpanelCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_881114754245 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CL_296951278235 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_623976747838 /* Debug */,
+				BC_494446443698 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		CL_599732722627 /* Build configuration list for PBXProject "CtrlpanelCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_479945831424 /* Debug */,
+				BC_881114754245 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CL_777771946555 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_331190821215 /* Debug */,
+				BC_659055029247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = P_5997327226270 /* Project object */;
+}

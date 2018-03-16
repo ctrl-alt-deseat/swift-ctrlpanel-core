@@ -1,0 +1,15 @@
+name: CtrlpanelCore
+options:
+  bundleIdPrefix: com.ctrlaltdeseat
+  deploymentTarget:
+    macOS: 10.13
+    iOS: 9.0
+targets:
+  CtrlpanelCore:
+    type: framework
+    platform: [iOS, macOS]
+    sources: Sources
+    scheme: {}
+    dependencies:
+      - carthage: JSBridge
+      - carthage: PromiseKit
