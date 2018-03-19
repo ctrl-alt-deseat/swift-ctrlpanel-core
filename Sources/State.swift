@@ -1,9 +1,9 @@
 import Foundation
 
 public struct CtrlpanelAccount: Codable, Equatable {
-    let handle: String
-    let hostname: String
-    let password: String
+    public let handle: String
+    public let hostname: String
+    public let password: String
 
     public init (handle: String, hostname: String, password: String) {
         self.handle = handle
@@ -21,8 +21,8 @@ public func ==(lhs: CtrlpanelAccount, rhs: CtrlpanelAccount) -> Bool {
 }
 
 public struct CtrlpanelInboxEntry: Codable, Equatable {
-    let hostname: String
-    let email: String
+    public let hostname: String
+    public let email: String
 
     public init (hostname: String, email: String) {
         self.hostname = hostname
@@ -38,8 +38,8 @@ public func ==(lhs: CtrlpanelInboxEntry, rhs: CtrlpanelInboxEntry) -> Bool {
 }
 
 public struct CtrlpanelParsedEntries: Codable {
-    let accounts: [UUID: CtrlpanelAccount]
-    let inbox: [UUID: CtrlpanelInboxEntry]
+    public let accounts: [UUID: CtrlpanelAccount]
+    public let inbox: [UUID: CtrlpanelInboxEntry]
 }
 
 enum SubscriptionStatus: String, Codable {

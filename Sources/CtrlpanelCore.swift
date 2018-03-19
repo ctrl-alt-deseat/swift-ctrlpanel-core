@@ -64,55 +64,55 @@ open class CtrlpanelCore {
         return fn().done { self.state = $0 }
     }
 
-    func lock() -> Promise<Void> {
+    public func lock() -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.lock")
         }
     }
 
-    func login(handle: String, secretKey: String, masterPassword: String, saveDevice: Bool) -> Promise<Void> {
+    public func login(handle: String, secretKey: String, masterPassword: String, saveDevice: Bool) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.login", withArgs: (handle, secretKey, masterPassword, saveDevice))
         }
     }
 
-    func unlock(masterPassword: String) -> Promise<Void> {
+    public func unlock(masterPassword: String) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.unlock", withArg: masterPassword)
         }
     }
 
-    func connect() -> Promise<Void> {
+    public func connect() -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.connect")
         }
     }
 
-    func sync() -> Promise<Void> {
+    public func sync() -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.sync")
         }
     }
 
-    func createAccount (id: UUID, data: CtrlpanelAccount) -> Promise<Void> {
+    public func createAccount (id: UUID, data: CtrlpanelAccount) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.createAccount", withArgs: (id, data))
         }
     }
 
-    func deleteAccount (id: UUID) -> Promise<Void> {
+    public func deleteAccount (id: UUID) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.deleteAccount", withArg: id)
         }
     }
 
-    func updateAccount (id: UUID, data: CtrlpanelAccount) -> Promise<Void> {
+    public func updateAccount (id: UUID, data: CtrlpanelAccount) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.updateAccount", withArgs: (id, data))
         }
     }
 
-    func clearStoredData () -> Promise<Void> {
+    public func clearStoredData () -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.clearStoredData")
         }

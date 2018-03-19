@@ -3,7 +3,7 @@ import XCTest
 import Foundation
 import PromiseKit
 
-@testable import CtrlpanelCore
+import CtrlpanelCore
 
 extension XCTestCase {
     func expectation(description: String, _ promiseFactory: () -> Promise<Void>) {
