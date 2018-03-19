@@ -57,9 +57,7 @@ open class CtrlpanelCore {
     }
 
     internal func updateState(_ fn: @escaping () -> Promise<CtrlpanelState>) -> Promise<Void> {
-        return ready.then { _ in fn() }.tap {
-            if case .fulfilled(let state) = $0 { self.state = state }
-        }.asVoid()
+        return ready.then { _ in fn() }.done { self.state = $0 }
     }
 
     func lock() -> Promise<Void> {
