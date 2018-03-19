@@ -2,8 +2,8 @@ name: CtrlpanelCore
 options:
   bundleIdPrefix: com.ctrlaltdeseat
   deploymentTarget:
-    macOS: 10.13
-    iOS: 9.0
+    macOS: '10.13'
+    iOS: '11.0'
 targets:
   CtrlpanelCore:
     type: framework
