@@ -23,7 +23,7 @@ extension XCTestCase {
 class CtrlpanelCoreTests: XCTestCase {
     // This should absolutely be broken out to multiple tests!
     func testEverythingWorks() {
-        let core = CtrlpanelCore(apiHost: URL(string: "http://localhost:1834")!, syncToken: nil)
+        var core: CtrlpanelCore!
 
         // Yes, this is hardcoded to my machine 🙈
         let handle = "0496-6N86Z8-EK12AY-24S415-5BC4"
@@ -35,7 +35,7 @@ class CtrlpanelCoreTests: XCTestCase {
 
         expectation(description: "everything") {
             firstly {
-                core.ready
+                CtrlpanelCore.asyncInit(apiHost: URL(string: "http://localhost:1834")!, syncToken: nil).done { core = $0 }
             }.done { _ in
                 XCTAssertEqual(core.locked, true)
                 XCTAssertEqual(core.hasAccount, false)

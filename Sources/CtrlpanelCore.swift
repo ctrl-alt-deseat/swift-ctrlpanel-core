@@ -5,11 +5,8 @@ import PromiseKit
 
 @available(macOS 10.13, *)
 open class CtrlpanelCore {
-    internal let bridge = JSBridge(libraryCode: libraryCode)
-    internal var state = CtrlpanelState.empty()
-    internal var _ready: Promise<Void>?
-
-    public var ready: Promise<Void> { return self._ready! }
+    internal let bridge: JSBridge
+    internal var state: CtrlpanelState
 
     public var hasAccount: Bool {
         switch state {
@@ -38,26 +35,33 @@ open class CtrlpanelCore {
         }
     }
 
-    public init(apiHost: URL?, syncToken: String?) {
-        self._ready = firstly { () -> Promise<Void> in
+    public static func asyncInit(apiHost: URL?, syncToken: String?) -> Promise<CtrlpanelCore> {
+        let bridge = JSBridge(libraryCode: libraryCode)
+
+        return firstly { () -> Promise<Void> in
             if let host = apiHost {
-                return self.bridge.call(function: "Ctrlpanel.boot", withArg: host)
+                return bridge.call(function: "Ctrlpanel.boot", withArg: host)
             } else {
-                return self.bridge.call(function: "Ctrlpanel.boot")
+                return bridge.call(function: "Ctrlpanel.boot")
             }
         }.then { _ -> Promise<CtrlpanelState> in
             if let token = syncToken {
-                return self.bridge.call(function: "Ctrlpanel.init", withArg: token)
+                return bridge.call(function: "Ctrlpanel.init", withArg: token)
             } else {
-                return self.bridge.call(function: "Ctrlpanel.init")
+                return bridge.call(function: "Ctrlpanel.init")
             }
-        }.done { state in
-            self.state = state
+        }.then { state in
+            return Promise.value(CtrlpanelCore(bridge: bridge, state: state))
         }
     }
 
+    internal init(bridge: JSBridge, state: CtrlpanelState) {
+        self.bridge = bridge
+        self.state = state
+    }
+
     internal func updateState(_ fn: @escaping () -> Promise<CtrlpanelState>) -> Promise<Void> {
-        return ready.then { _ in fn() }.done { self.state = $0 }
+        return fn().done { self.state = $0 }
     }
 
     func lock() -> Promise<Void> {
