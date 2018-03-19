@@ -35,6 +35,11 @@ class CtrlpanelCoreTests: XCTestCase {
 
         expectation(description: "everything") {
             firstly {
+                core.ready
+            }.done { _ in
+                XCTAssertEqual(core.locked, true)
+                XCTAssertEqual(core.hasAccount, false)
+            }.then { _ in
                 core.login(handle: handle, secretKey: secretKey, masterPassword: masterPassword, saveDevice: false)
             }.done { _ in
                 XCTAssertEqual(core.locked, false)
