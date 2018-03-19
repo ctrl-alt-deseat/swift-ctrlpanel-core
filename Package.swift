@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "CtrlpanelCore", targets: ["CtrlpanelCore"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/LinusU/JSBridge", from: "1.0.0-alpha.4"),
+        .package(url: "https://github.com/LinusU/JSBridge", from: "1.0.0-alpha.6"),
         .package(url: "https://github.com/mxcl/PromiseKit", from: "6.0.0"),
     ],
     targets: [
