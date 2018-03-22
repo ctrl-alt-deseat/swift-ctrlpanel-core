@@ -18,6 +18,15 @@
           "revision": "62c61dd712da2f29a339cc2b46bb28a6a90086c6",
           "version": "6.2.2"
         }
+      },
+      {
+        "package": "Signals",
+        "repositoryURL": "https://github.com/LinusU/Signals",
+        "state": {
+          "branch": "swiftpm",
+          "revision": "5d3afa1109ba91a09ea866428f0c32b20698badc",
+          "version": null
+        }
       }
     ]
   },

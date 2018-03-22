@@ -39,35 +39,41 @@ class CtrlpanelCoreTests: XCTestCase {
             }.done { _ in
                 XCTAssertEqual(core.locked, true)
                 XCTAssertEqual(core.hasAccount, false)
+                XCTAssertEqual(core.onUpdate.fireCount, 0)
             }.then { _ in
                 core.login(handle: handle, secretKey: secretKey, masterPassword: masterPassword, saveDevice: false)
             }.done { _ in
                 XCTAssertEqual(core.locked, false)
                 XCTAssertEqual(core.hasAccount, true)
+                XCTAssertEqual(core.onUpdate.fireCount, 1)
             }.then { _ in
                 core.createAccount(id: accountID, data: accountData)
             }.done { _ in
                 XCTAssertEqual(core.locked, false)
                 XCTAssertEqual(core.hasAccount, true)
                 XCTAssertEqual(core.parsedEntries!.accounts[accountID], accountData)
+                XCTAssertEqual(core.onUpdate.fireCount, 2)
             }.then { _ in
                 core.deleteAccount(id: accountID)
             }.done { _ in
                 XCTAssertEqual(core.locked, false)
                 XCTAssertEqual(core.hasAccount, true)
                 XCTAssertEqual(core.parsedEntries!.accounts[accountID], nil)
+                XCTAssertEqual(core.onUpdate.fireCount, 3)
             }.then { _ in
                 core.lock()
             }.done { _ in
                 XCTAssertEqual(core.locked, true)
                 XCTAssertEqual(core.hasAccount, true)
                 XCTAssertNil(core.parsedEntries)
+                XCTAssertEqual(core.onUpdate.fireCount, 4)
             }.then { _ in
                 core.unlock(masterPassword: masterPassword)
             }.done { _ in
                 XCTAssertEqual(core.locked, false)
                 XCTAssertEqual(core.hasAccount, true)
                 XCTAssertNotNil(core.parsedEntries)
+                XCTAssertEqual(core.onUpdate.fireCount, 5)
             }
         }
 

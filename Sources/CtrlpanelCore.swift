@@ -2,11 +2,14 @@ import Foundation
 
 import JSBridge
 import PromiseKit
+import Signals
 
 @available(macOS 10.13, *)
 open class CtrlpanelCore {
     internal let bridge: JSBridge
     internal var state: CtrlpanelState
+
+    public let onUpdate = Signal<Void>()
 
     public var hasAccount: Bool {
         switch state {
@@ -61,7 +64,10 @@ open class CtrlpanelCore {
     }
 
     internal func updateState(_ fn: @escaping () -> Promise<CtrlpanelState>) -> Promise<Void> {
-        return fn().done { self.state = $0 }
+        return fn().done {
+            self.state = $0
+            self.onUpdate.fire(())
+        }
     }
 
     public func lock() -> Promise<Void> {

@@ -9,10 +9,11 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/LinusU/JSBridge", from: "1.0.0-alpha.6"),
+        .package(url: "https://github.com/LinusU/Signals", .branch("swiftpm")),
         .package(url: "https://github.com/mxcl/PromiseKit", from: "6.0.0"),
     ],
     targets: [
-        .target(name: "CtrlpanelCore", dependencies: ["JSBridge", "PromiseKit"], path: "Sources"),
+        .target(name: "CtrlpanelCore", dependencies: ["JSBridge", "PromiseKit", "Signals"], path: "Sources"),
         .testTarget(name: "CtrlpanelCoreTests", dependencies: ["CtrlpanelCore"], path: "Tests"),
     ]
 )
