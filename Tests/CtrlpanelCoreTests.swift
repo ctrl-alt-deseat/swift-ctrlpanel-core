@@ -79,4 +79,21 @@ class CtrlpanelCoreTests: XCTestCase {
 
         self.waitForExpectations(timeout: 10)
     }
+
+    func testRandomAccountPassword() {
+        var core: CtrlpanelCore!
+
+        expectation(description: "randomAccountPassword") {
+            firstly {
+                CtrlpanelCore.asyncInit(apiHost: URL(string: "http://localhost:1834")!, syncToken: nil).done { core = $0 }
+            }.then { _ in
+                core.randomAccountPassword()
+            }.done { password in
+                XCTAssertEqual(password.count, 15)
+                XCTAssertEqual(core.onUpdate.fireCount, 0)
+            }
+        }
+
+        self.waitForExpectations(timeout: 10)
+    }
 }
