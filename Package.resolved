@@ -23,8 +23,8 @@
         "package": "Signals",
         "repositoryURL": "https://github.com/LinusU/Signals",
         "state": {
-          "branch": "swiftpm",
-          "revision": "3ebd80bdafd3d47874ab6c4dfc0c1f511a03d113",
+          "branch": "app-extension-compat",
+          "revision": "96834fc974c59e7b338e99476b5dae92430fcc71",
           "version": null
         }
       }

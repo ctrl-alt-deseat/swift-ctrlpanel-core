@@ -9,7 +9,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/LinusU/JSBridge", from: "1.0.0-alpha.8"),
-        .package(url: "https://github.com/LinusU/Signals", .branch("swiftpm")),
+        .package(url: "https://github.com/LinusU/Signals", .branch("app-extension-compat")),
         .package(url: "https://github.com/mxcl/PromiseKit", from: "6.0.0"),
     ],
     targets: [
