@@ -10,6 +10,8 @@ targets:
     platform: [iOS, macOS]
     sources: Sources
     scheme: {}
+    settings:
+      APPLICATION_EXTENSION_API_ONLY: true
     dependencies:
       - carthage: JSBridge
       - carthage: PromiseKit
