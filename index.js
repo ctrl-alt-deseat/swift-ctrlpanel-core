@@ -1,4 +1,5 @@
 import CtrlpanelCore from '@ctrlpanel/core'
+import findAccountsForHostname from '@ctrlpanel/find-accounts-for-hostname'
 
 let core = new CtrlpanelCore()
 let state = null
@@ -73,6 +74,13 @@ window['Ctrlpanel'] = {
     if (state.kind !== 'connected') throw new Error(`Invalid state: ${state.kind}`)
 
     return swiftState(state = await core.sync(state))
+  },
+
+  accountsForHostname (hostname) {
+    const { accounts } = core.getParsedEntries(state)
+    const accountList = Object.keys(accounts).map(id => Object.assign({ id }, accounts[id]))
+
+    return findAccountsForHostname(hostname, accountList)
   },
 
   async createAccount (id, account) {

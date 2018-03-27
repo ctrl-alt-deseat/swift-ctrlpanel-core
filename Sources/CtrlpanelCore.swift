@@ -104,6 +104,10 @@ open class CtrlpanelCore {
         }
     }
 
+    public func accountsForHostname(_ hostname: String) -> Promise<[CtrlpanelAccountMatch]> {
+        return self.bridge.call(function: "Ctrlpanel.accountsForHostname", withArg: hostname)
+    }
+
     public func createAccount (id: UUID, data: CtrlpanelAccount) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.createAccount", withArgs: (id, data))

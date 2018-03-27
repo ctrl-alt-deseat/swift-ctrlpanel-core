@@ -10,14 +10,10 @@ public struct CtrlpanelAccount: Codable, Equatable {
         self.hostname = hostname
         self.password = password
     }
-}
 
-public func ==(lhs: CtrlpanelAccount, rhs: CtrlpanelAccount) -> Bool {
-    return (
-        lhs.handle == rhs.handle &&
-        lhs.hostname == rhs.hostname &&
-        lhs.password == rhs.password
-    )
+    static public func ==(lhs: CtrlpanelAccount, rhs: CtrlpanelAccount) -> Bool {
+        return lhs.handle == rhs.handle && lhs.hostname == rhs.hostname && lhs.password == rhs.password
+    }
 }
 
 public struct CtrlpanelInboxEntry: Codable, Equatable {
@@ -28,18 +24,51 @@ public struct CtrlpanelInboxEntry: Codable, Equatable {
         self.hostname = hostname
         self.email = email
     }
-}
 
-public func ==(lhs: CtrlpanelInboxEntry, rhs: CtrlpanelInboxEntry) -> Bool {
-    return (
-        lhs.hostname == rhs.hostname &&
-        lhs.email == rhs.email
-    )
+    public static func ==(lhs: CtrlpanelInboxEntry, rhs: CtrlpanelInboxEntry) -> Bool {
+        return lhs.hostname == rhs.hostname && lhs.email == rhs.email
+    }
 }
 
 public struct CtrlpanelParsedEntries: Codable {
     public let accounts: [UUID: CtrlpanelAccount]
     public let inbox: [UUID: CtrlpanelInboxEntry]
+}
+
+public struct CtrlpanelAccountMatch: Codable, Equatable {
+    private enum CodingKeys: String, CodingKey {
+        case id, score
+    }
+
+    public let id: UUID
+    public let score: Double
+    public let account: CtrlpanelAccount
+
+    public init(id: UUID, score: Double, account: CtrlpanelAccount) {
+        self.id = id
+        self.score = score
+        self.account = account
+    }
+
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        id = try values.decode(UUID.self, forKey: .id)
+        score = try values.decode(Double.self, forKey: .score)
+        account = try CtrlpanelAccount(from: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(id, forKey: .id)
+        try container.encode(score, forKey: .score)
+        try account.encode(to: encoder)
+    }
+
+    public static func ==(lhs: CtrlpanelAccountMatch, rhs: CtrlpanelAccountMatch) -> Bool {
+        return lhs.id == rhs.id && lhs.score == rhs.score && lhs.account == rhs.account
+    }
 }
 
 enum SubscriptionStatus: String, Codable {
