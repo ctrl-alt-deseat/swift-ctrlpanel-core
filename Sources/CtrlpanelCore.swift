@@ -80,6 +80,12 @@ open class CtrlpanelCore {
         }
     }
 
+    public func reset(withSyncToken syncToken: String) -> Promise<Void> {
+        return updateState {
+            self.bridge.call(function: "Ctrlpanel.init", withArg: syncToken)
+        }
+    }
+
     public func login(handle: String, secretKey: String, masterPassword: String, saveDevice: Bool) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.login", withArgs: (handle, secretKey, masterPassword, saveDevice))
