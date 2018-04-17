@@ -101,6 +101,18 @@ window['Ctrlpanel'] = {
 
     return swiftState(state = await core.updateAccount(state, id.toLowerCase(), account))
   },
+  async createInboxEntry (id, inboxEntry) {
+    if (state.kind === 'unlocked') await window['Ctrlpanel'].connect()
+    if (state.kind !== 'connected') throw new Error('Vault is locked')
+
+    return swiftState(state = await core.createInboxEntry(state, id.toLowerCase(), inboxEntry))
+  },
+  async deleteInboxEntry (id) {
+    if (state.kind === 'unlocked') await window['Ctrlpanel'].connect()
+    if (state.kind !== 'connected') throw new Error('Vault is locked')
+
+    return swiftState(state = await core.deleteInboxEntry(state, id.toLowerCase()))
+  },
 
   async clearStoredData () {
     return swiftState(state = await core.clearStoredData(state))

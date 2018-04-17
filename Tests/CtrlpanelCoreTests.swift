@@ -159,4 +159,35 @@ class CtrlpanelCoreTests: XCTestCase {
 
         XCTAssertEqual(match, decoded)
     }
+
+    func testInboxEntries() {
+        var core: CtrlpanelCore!
+
+        let inboxEntryID = UUID()
+        let inboxEntryData = CtrlpanelInboxEntry(hostname: "example.com", email: "linus@example.com")
+
+        expectation(description: "inboxEntries") {
+            firstly {
+                CtrlpanelCore.asyncInit(apiHost: apiHost, syncToken: nil).done { core = $0 }
+            }.done { _ in
+                XCTAssertEqual(core.onUpdate.fireCount, 0)
+            }.then { _ in
+                core.login(handle: handle, secretKey: secretKey, masterPassword: masterPassword, saveDevice: false)
+            }.done { _ in
+                XCTAssertEqual(core.onUpdate.fireCount, 1)
+            }.then { _ in
+                core.createInboxEntry(id: inboxEntryID, data: inboxEntryData)
+            }.done { _ in
+                XCTAssertEqual(core.parsedEntries!.inbox[inboxEntryID], inboxEntryData)
+                XCTAssertEqual(core.onUpdate.fireCount, 2)
+            }.then { _ in
+                core.deleteInboxEntry(id: inboxEntryID)
+            }.done { _ in
+                XCTAssertEqual(core.parsedEntries!.inbox[inboxEntryID], nil)
+                XCTAssertEqual(core.onUpdate.fireCount, 3)
+            }
+        }
+
+        self.waitForExpectations(timeout: 10)
+    }
 }

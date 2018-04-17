@@ -132,6 +132,18 @@ open class CtrlpanelCore {
         }
     }
 
+    public func createInboxEntry (id: UUID, data: CtrlpanelInboxEntry) -> Promise<Void> {
+        return updateState {
+            self.bridge.call(function: "Ctrlpanel.createInboxEntry", withArgs: (id, data))
+        }
+    }
+
+    public func deleteInboxEntry (id: UUID) -> Promise<Void> {
+        return updateState {
+            self.bridge.call(function: "Ctrlpanel.deleteInboxEntry", withArg: id)
+        }
+    }
+
     public func clearStoredData () -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.clearStoredData")
