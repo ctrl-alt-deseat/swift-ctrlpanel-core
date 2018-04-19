@@ -5,9 +5,9 @@
   "dependencies": {
     "@ctrlpanel/core": "^0.2.4",
     "@ctrlpanel/find-accounts-for-hostname": "^1.1.0",
-    "babel-minify-webpack-plugin": "^0.3.0",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14",
     "webpack-sources": "^1.1.0"
   }
 }

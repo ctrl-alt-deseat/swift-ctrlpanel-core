@@ -7,8 +7,8 @@ function ToSwiftPlugin (options) {
 }
 
 ToSwiftPlugin.prototype.apply = function (compiler) {
-  compiler.plugin('compilation', (compilation) => {
-    compilation.plugin('optimize-chunk-assets', (chunks, done) => {
+  compiler.hooks.compilation.tap({ name: 'ToSwift' }, (compilation) => {
+    compilation.hooks.optimizeChunkAssets.tapAsync({ name: 'ToSwift' }, (chunks, done) => {
       for (const chunk of chunks) {
         for (const fileName of chunk.files) {
           const source = compilation.assets[fileName].source()
