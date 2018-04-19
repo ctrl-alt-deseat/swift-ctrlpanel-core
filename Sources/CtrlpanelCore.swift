@@ -38,21 +38,13 @@ open class CtrlpanelCore {
         }
     }
 
-    public static func asyncInit(apiHost: URL?, syncToken: String?) -> Promise<CtrlpanelCore> {
+    public static func asyncInit(apiHost: URL?, deseatmeApiHost: URL?, syncToken: String?) -> Promise<CtrlpanelCore> {
         let bridge = JSBridge(libraryCode: libraryCode)
 
-        return firstly { () -> Promise<Void> in
-            if let host = apiHost {
-                return bridge.call(function: "Ctrlpanel.boot", withArg: host)
-            } else {
-                return bridge.call(function: "Ctrlpanel.boot")
-            }
-        }.then { _ -> Promise<CtrlpanelState> in
-            if let token = syncToken {
-                return bridge.call(function: "Ctrlpanel.init", withArg: token)
-            } else {
-                return bridge.call(function: "Ctrlpanel.init")
-            }
+        return firstly {
+            bridge.call(function: "Ctrlpanel.boot", withArgs: (apiHost, deseatmeApiHost))
+        }.then { _ in
+            bridge.call(function: "Ctrlpanel.init", withArg: syncToken)
         }.then { state in
             return Promise.value(CtrlpanelCore(bridge: bridge, state: state))
         }
@@ -141,6 +133,12 @@ open class CtrlpanelCore {
     public func deleteInboxEntry (id: UUID) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.deleteInboxEntry", withArg: id)
+        }
+    }
+
+    public func importFromDeseatme (exportToken: String) -> Promise<Void> {
+        return updateState {
+            self.bridge.call(function: "Ctrlpanel.importFromDeseatme", withArg: exportToken)
         }
     }
 

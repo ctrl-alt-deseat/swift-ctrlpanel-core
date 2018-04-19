@@ -7,6 +7,7 @@ import CtrlpanelCore
 
 // Yes, this is hardcoded to my machine 🙈
 let apiHost = URL(string: "http://localhost:1834")!
+let deseatmeApiHost = URL(string: "http://localhost:1835")!
 let handle = "0496-6N86Z8-EK12AY-24S415-5BC4"
 let masterPassword = "flunky 0 jumper sop waste"
 let secretKey = "8QZ8-EVHSKT-CE0CB9-CKJCEH-1KH0"
@@ -36,7 +37,7 @@ class CtrlpanelCoreTests: XCTestCase {
 
         expectation(description: "everything") {
             firstly {
-                CtrlpanelCore.asyncInit(apiHost: apiHost, syncToken: nil).done { core = $0 }
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.done { _ in
                 XCTAssertEqual(core.locked, true)
                 XCTAssertEqual(core.hasAccount, false)
@@ -86,7 +87,7 @@ class CtrlpanelCoreTests: XCTestCase {
 
         expectation(description: "randomAccountPassword") {
             firstly {
-                CtrlpanelCore.asyncInit(apiHost: apiHost, syncToken: nil).done { core = $0 }
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.then { _ in
                 core.randomAccountPassword()
             }.done { password in
@@ -112,7 +113,7 @@ class CtrlpanelCoreTests: XCTestCase {
 
         expectation(description: "accountsForHostname") {
             firstly {
-                CtrlpanelCore.asyncInit(apiHost: apiHost, syncToken: nil).done { core = $0 }
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.then { _ in
                 core.login(handle: handle, secretKey: secretKey, masterPassword: masterPassword, saveDevice: false)
             }.then { _ in
@@ -168,7 +169,7 @@ class CtrlpanelCoreTests: XCTestCase {
 
         expectation(description: "inboxEntries") {
             firstly {
-                CtrlpanelCore.asyncInit(apiHost: apiHost, syncToken: nil).done { core = $0 }
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.done { _ in
                 XCTAssertEqual(core.onUpdate.fireCount, 0)
             }.then { _ in

@@ -47,10 +47,15 @@ window['Ctrlpanel'] = {
     return CtrlpanelCore.randomSecretKey()
   },
 
-  boot (apiHost) {
-    core = new CtrlpanelCore(apiHost)
+  boot (apiHost, deseatmeApiHost) {
+    if (apiHost == null) apiHost = undefined
+    if (deseatmeApiHost == null) deseatmeApiHost = undefined
+
+    core = new CtrlpanelCore(apiHost, deseatmeApiHost)
   },
   init (syncToken) {
+    if (syncToken == null) syncToken = undefined
+
     return swiftState(state = core.init(syncToken))
   },
   lock () {
@@ -112,6 +117,12 @@ window['Ctrlpanel'] = {
     if (state.kind !== 'connected') throw new Error('Vault is locked')
 
     return swiftState(state = await core.deleteInboxEntry(state, id.toLowerCase()))
+  },
+  async importFromDeseatme (exportToken) {
+    if (state.kind === 'unlocked') await window['Ctrlpanel'].connect()
+    if (state.kind !== 'connected') throw new Error('Vault is locked')
+
+    return swiftState(state = await core.importFromDeseatme(state, exportToken))
   },
 
   async clearStoredData () {
