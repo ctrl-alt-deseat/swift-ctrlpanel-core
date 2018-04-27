@@ -82,6 +82,58 @@ class CtrlpanelCoreTests: XCTestCase {
         self.waitForExpectations(timeout: 10)
     }
 
+    func testHandle() {
+        var core: CtrlpanelCore!
+
+        expectation(description: "handle") {
+            firstly {
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
+            }.done { _ in
+                XCTAssertEqual(core.handle, nil)
+            }.then { _ in
+                core.login(handle: handle, secretKey: secretKey, masterPassword: masterPassword, saveDevice: false)
+            }.done { _ in
+                XCTAssertEqual(core.handle, handle)
+            }.then { _ in
+                core.lock()
+            }.done { _ in
+                XCTAssertEqual(core.handle, handle)
+            }.then { _ in
+                core.unlock(masterPassword: masterPassword)
+            }.done { _ in
+                XCTAssertEqual(core.handle, handle)
+            }
+        }
+
+        self.waitForExpectations(timeout: 10)
+    }
+
+    func testSecretKey() {
+        var core: CtrlpanelCore!
+
+        expectation(description: "secretKey") {
+            firstly {
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
+            }.done { _ in
+                XCTAssertEqual(core.secretKey, nil)
+            }.then { _ in
+                core.login(handle: handle, secretKey: secretKey, masterPassword: masterPassword, saveDevice: false)
+            }.done { _ in
+                XCTAssertEqual(core.secretKey, secretKey)
+            }.then { _ in
+                core.lock()
+            }.done { _ in
+                XCTAssertEqual(core.secretKey, secretKey)
+            }.then { _ in
+                core.unlock(masterPassword: masterPassword)
+            }.done { _ in
+                XCTAssertEqual(core.secretKey, secretKey)
+            }
+        }
+
+        self.waitForExpectations(timeout: 10)
+    }
+
     func testRandomAccountPassword() {
         var core: CtrlpanelCore!
 

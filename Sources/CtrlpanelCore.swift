@@ -11,6 +11,24 @@ open class CtrlpanelCore {
 
     public let onUpdate = Signal<Void>()
 
+    public var handle: String? {
+        switch state {
+            case .empty: return nil
+            case .locked(let handle, _, _): return handle
+            case .unlocked(let handle, _, _, _): return handle
+            case .connected(let handle, _, _, _, _, _, _): return handle
+        }
+    }
+
+    public var secretKey: String? {
+        switch state {
+            case .empty: return nil
+            case .locked(_, _, let secretKey): return secretKey
+            case .unlocked(_, _, _, let secretKey): return secretKey
+            case .connected(_, _, _, _, let secretKey, _, _): return secretKey
+        }
+    }
+
     public var hasAccount: Bool {
         switch state {
             case .empty: return false
