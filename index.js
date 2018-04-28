@@ -128,5 +128,8 @@ window['Ctrlpanel'] = {
 
   async clearStoredData () {
     return swiftState(state = await core.clearStoredData(state))
+  },
+  async deleteUser () {
+    return swiftState(state = await core.deleteUser(state))
   }
 }

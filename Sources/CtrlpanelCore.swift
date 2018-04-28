@@ -174,4 +174,10 @@ open class CtrlpanelCore {
             self.bridge.call(function: "Ctrlpanel.clearStoredData")
         }
     }
+
+    public func deleteUser () -> Promise<Void> {
+        return updateState {
+            self.bridge.call(function: "Ctrlpanel.deleteUser")
+        }
+    }
 }
