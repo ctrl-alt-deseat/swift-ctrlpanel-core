@@ -81,15 +81,15 @@ enum SubscriptionStatus: String, Codable {
 
 enum CtrlpanelState {
     case empty()
-    case locked(handle: String, saveDevice: Bool, secretKey: String)
-    case unlocked(handle: String, parsedEntries: CtrlpanelParsedEntries, saveDevice: Bool, secretKey: String)
-    case connected(handle: String, parsedEntries: CtrlpanelParsedEntries, hasPaymentInformation: Bool, saveDevice: Bool, secretKey: String, subscriptionStatus: SubscriptionStatus, trialDaysLeft: Int)
+    case locked(handle: String, saveDevice: Bool, secretKey: String, syncToken: String)
+    case unlocked(handle: String, parsedEntries: CtrlpanelParsedEntries, saveDevice: Bool, secretKey: String, syncToken: String)
+    case connected(handle: String, parsedEntries: CtrlpanelParsedEntries, hasPaymentInformation: Bool, saveDevice: Bool, secretKey: String, subscriptionStatus: SubscriptionStatus, syncToken: String, trialDaysLeft: Int)
 }
 
 extension CtrlpanelState: Decodable {
     private enum CodingKeys: String, CodingKey {
         case kind
-        case handle, parsedEntries, hasPaymentInformation, saveDevice, secretKey, subscriptionStatus, trialDaysLeft
+        case handle, parsedEntries, hasPaymentInformation, saveDevice, secretKey, subscriptionStatus, syncToken, trialDaysLeft
     }
 
     public enum CodingError: Swift.Error {
@@ -107,13 +107,15 @@ extension CtrlpanelState: Decodable {
             let handle = try values.decode(String.self, forKey: .handle)
             let saveDevice = try values.decode(Bool.self, forKey: .saveDevice)
             let secretKey = try values.decode(String.self, forKey: .secretKey)
-            self = .locked(handle: handle, saveDevice: saveDevice, secretKey: secretKey)
+            let syncToken = try values.decode(String.self, forKey: .syncToken)
+            self = .locked(handle: handle, saveDevice: saveDevice, secretKey: secretKey, syncToken: syncToken)
         case "unlocked":
             let handle = try values.decode(String.self, forKey: .handle)
             let parsedEntries = try values.decode(CtrlpanelParsedEntries.self, forKey: .parsedEntries)
             let saveDevice = try values.decode(Bool.self, forKey: .saveDevice)
             let secretKey = try values.decode(String.self, forKey: .secretKey)
-            self = .unlocked(handle: handle, parsedEntries: parsedEntries, saveDevice: saveDevice, secretKey: secretKey)
+            let syncToken = try values.decode(String.self, forKey: .syncToken)
+            self = .unlocked(handle: handle, parsedEntries: parsedEntries, saveDevice: saveDevice, secretKey: secretKey, syncToken: syncToken)
         case "connected":
             let handle = try values.decode(String.self, forKey: .handle)
             let parsedEntries = try values.decode(CtrlpanelParsedEntries.self, forKey: .parsedEntries)
@@ -121,8 +123,9 @@ extension CtrlpanelState: Decodable {
             let saveDevice = try values.decode(Bool.self, forKey: .saveDevice)
             let secretKey = try values.decode(String.self, forKey: .secretKey)
             let subscriptionStatus = try values.decode(SubscriptionStatus.self, forKey: .subscriptionStatus)
+            let syncToken = try values.decode(String.self, forKey: .syncToken)
             let trialDaysLeft = try values.decode(Int.self, forKey: .trialDaysLeft)
-            self = .connected(handle: handle, parsedEntries: parsedEntries, hasPaymentInformation: hasPaymentInformation, saveDevice: saveDevice, secretKey: secretKey, subscriptionStatus: subscriptionStatus, trialDaysLeft: trialDaysLeft)
+            self = .connected(handle: handle, parsedEntries: parsedEntries, hasPaymentInformation: hasPaymentInformation, saveDevice: saveDevice, secretKey: secretKey, subscriptionStatus: subscriptionStatus, syncToken: syncToken, trialDaysLeft: trialDaysLeft)
         default:
             throw CodingError.unknownKind(kind)
         }

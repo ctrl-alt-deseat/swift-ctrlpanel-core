@@ -14,45 +14,54 @@ open class CtrlpanelCore {
     public var handle: String? {
         switch state {
             case .empty: return nil
-            case .locked(let handle, _, _): return handle
-            case .unlocked(let handle, _, _, _): return handle
-            case .connected(let handle, _, _, _, _, _, _): return handle
+            case .locked(let handle, _, _, _): return handle
+            case .unlocked(let handle, _, _, _, _): return handle
+            case .connected(let handle, _, _, _, _, _, _, _): return handle
         }
     }
 
     public var secretKey: String? {
         switch state {
             case .empty: return nil
-            case .locked(_, _, let secretKey): return secretKey
-            case .unlocked(_, _, _, let secretKey): return secretKey
-            case .connected(_, _, _, _, let secretKey, _, _): return secretKey
+            case .locked(_, _, let secretKey, _): return secretKey
+            case .unlocked(_, _, _, let secretKey, _): return secretKey
+            case .connected(_, _, _, _, let secretKey, _, _, _): return secretKey
+        }
+    }
+
+    public var syncToken: String? {
+        switch state {
+            case .empty: return nil
+            case .locked(_, _, _, let syncToken): return syncToken
+            case .unlocked(_, _, _, _, let syncToken): return syncToken
+            case .connected(_, _, _, _, _, _, let syncToken, _): return syncToken
         }
     }
 
     public var hasAccount: Bool {
         switch state {
             case .empty: return false
-            case .locked(_, _, _): return true
-            case .unlocked(_, _, _, _): return true
-            case .connected(_, _, _, _, _, _, _): return true
+            case .locked(_, _, _, _): return true
+            case .unlocked(_, _, _, _, _): return true
+            case .connected(_, _, _, _, _, _, _, _): return true
         }
     }
 
     public var locked: Bool {
         switch state {
             case .empty: return true
-            case .locked(_, _, _): return true
-            case .unlocked(_, _, _, _): return false
-            case .connected(_, _, _, _, _, _, _): return false
+            case .locked(_, _, _, _): return true
+            case .unlocked(_, _, _, _, _): return false
+            case .connected(_, _, _, _, _, _, _, _): return false
         }
     }
 
     public var parsedEntries: CtrlpanelParsedEntries? {
         switch state {
             case .empty: return nil
-            case .locked(_, _, _): return nil
-            case .unlocked(_, let result, _, _): return result
-            case .connected(_, let result, _, _, _, _, _): return result
+            case .locked(_, _, _, _): return nil
+            case .unlocked(_, let result, _, _, _): return result
+            case .connected(_, let result, _, _, _, _, _, _): return result
         }
     }
 

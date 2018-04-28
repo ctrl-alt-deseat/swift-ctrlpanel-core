@@ -13,6 +13,7 @@ function swiftState (state) {
   if (state.handle != null) result.handle = state.handle
   if (state.saveDevice != null) result.saveDevice = state.saveDevice
   if (state.secretKey != null) result.secretKey = state.secretKey
+  if (state.handle !== null && state.secretKey !== null) result.syncToken = core.getSyncToken(state)
 
   // Unlocked
   if (state.decryptedEntries != null) {
