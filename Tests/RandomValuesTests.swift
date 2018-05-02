@@ -26,6 +26,22 @@ class RandomValuesTests: XCTestCase {
         }
     }
 
+    func testRandomHandle() {
+        var core: CtrlpanelCore!
+
+        waitedExpectation(description: "randomHandle") {
+            firstly {
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
+            }.then { _ in
+                core.randomHandle()
+            }.done { handle in
+                XCTAssertEqual(handle.count, 30)
+                XCTAssertEqual(handle.components(separatedBy: "-").count, 5)
+                XCTAssertEqual(core.onUpdate.fireCount, 0)
+            }
+        }
+    }
+
     func testRandomMasterPassword() {
         var core: CtrlpanelCore!
 

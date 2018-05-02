@@ -93,6 +93,10 @@ open class CtrlpanelCore {
         return self.bridge.call(function: "Ctrlpanel.randomAccountPassword")
     }
 
+    public func randomHandle() -> Promise<String> {
+        return self.bridge.call(function: "Ctrlpanel.randomHandle")
+    }
+
     public func randomMasterPassword() -> Promise<String> {
         return self.bridge.call(function: "Ctrlpanel.randomMasterPassword")
     }
