@@ -6,26 +6,12 @@ import PromiseKit
 import CtrlpanelCore
 
 // Yes, this is hardcoded to my machine 🙈
-let apiHost = URL(string: "http://localhost:1834")!
-let deseatmeApiHost = URL(string: "http://localhost:1835")!
-let handle = "0496-6N86Z8-EK12AY-24S415-5BC4"
-let masterPassword = "flunky 0 jumper sop waste"
-let secretKey = "8QZ8-EVHSKT-CE0CB9-CKJCEH-1KH0"
-let syncToken = "04966N86Z8EK12AY24S4155BC48QZ8EVHSKTCE0CB9CKJCEH1KH0"
-
-extension XCTestCase {
-    func expectation(description: String, _ promiseFactory: () -> Promise<Void>) {
-        let done = self.expectation(description: "Promise \(description) settled")
-
-        firstly {
-            promiseFactory()
-        }.catch { err in
-            XCTFail("Failed with error: \(err)")
-        }.finally {
-            done.fulfill()
-        }
-    }
-}
+fileprivate let apiHost = URL(string: "http://localhost:1834")!
+fileprivate let deseatmeApiHost = URL(string: "http://localhost:1835")!
+fileprivate let handle = "0496-6N86Z8-EK12AY-24S415-5BC4"
+fileprivate let masterPassword = "flunky 0 jumper sop waste"
+fileprivate let secretKey = "8QZ8-EVHSKT-CE0CB9-CKJCEH-1KH0"
+fileprivate let syncToken = "04966N86Z8EK12AY24S4155BC48QZ8EVHSKTCE0CB9CKJCEH1KH0"
 
 @available(macOS 10.13, *)
 class CtrlpanelCoreTests: XCTestCase {
@@ -36,7 +22,7 @@ class CtrlpanelCoreTests: XCTestCase {
         let accountID = UUID()
         let accountData = CtrlpanelAccount(handle: "Test", hostname: "example.com", password: "secret")
 
-        expectation(description: "everything") {
+        waitedExpectation(description: "everything") {
             firstly {
                 CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.done { _ in
@@ -79,14 +65,12 @@ class CtrlpanelCoreTests: XCTestCase {
                 XCTAssertEqual(core.onUpdate.fireCount, 5)
             }
         }
-
-        self.waitForExpectations(timeout: 10)
     }
 
     func testHandle() {
         var core: CtrlpanelCore!
 
-        expectation(description: "handle") {
+        waitedExpectation(description: "handle") {
             firstly {
                 CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.done { _ in
@@ -105,14 +89,12 @@ class CtrlpanelCoreTests: XCTestCase {
                 XCTAssertEqual(core.handle, handle)
             }
         }
-
-        self.waitForExpectations(timeout: 10)
     }
 
     func testSecretKey() {
         var core: CtrlpanelCore!
 
-        expectation(description: "secretKey") {
+        waitedExpectation(description: "secretKey") {
             firstly {
                 CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.done { _ in
@@ -131,14 +113,12 @@ class CtrlpanelCoreTests: XCTestCase {
                 XCTAssertEqual(core.secretKey, secretKey)
             }
         }
-
-        self.waitForExpectations(timeout: 10)
     }
 
     func testSyncToken() {
         var core: CtrlpanelCore!
 
-        expectation(description: "syncToken") {
+        waitedExpectation(description: "syncToken") {
             firstly {
                 CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.done { _ in
@@ -157,14 +137,12 @@ class CtrlpanelCoreTests: XCTestCase {
                 XCTAssertEqual(core.syncToken, syncToken)
             }
         }
-
-        self.waitForExpectations(timeout: 10)
     }
 
     func testRandomAccountPassword() {
         var core: CtrlpanelCore!
 
-        expectation(description: "randomAccountPassword") {
+        waitedExpectation(description: "randomAccountPassword") {
             firstly {
                 CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.then { _ in
@@ -174,8 +152,6 @@ class CtrlpanelCoreTests: XCTestCase {
                 XCTAssertEqual(core.onUpdate.fireCount, 0)
             }
         }
-
-        self.waitForExpectations(timeout: 10)
     }
 
     func testAccountsForHostname() {
@@ -190,7 +166,7 @@ class CtrlpanelCoreTests: XCTestCase {
         let account2ID = UUID()
         let account2Data = CtrlpanelAccount(handle: "B", hostname: "example.net", password: "x")
 
-        expectation(description: "accountsForHostname") {
+        waitedExpectation(description: "accountsForHostname") {
             firstly {
                 CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.then { _ in
@@ -223,8 +199,6 @@ class CtrlpanelCoreTests: XCTestCase {
                 let _ = core.deleteAccount(id: account2ID)
             }
         }
-
-        self.waitForExpectations(timeout: 10)
     }
 
     func testAccountsForHostnameCodable() throws {
@@ -246,7 +220,7 @@ class CtrlpanelCoreTests: XCTestCase {
         let inboxEntryID = UUID()
         let inboxEntryData = CtrlpanelInboxEntry(hostname: "example.com", email: "linus@example.com")
 
-        expectation(description: "inboxEntries") {
+        waitedExpectation(description: "inboxEntries") {
             firstly {
                 CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
             }.done { _ in
@@ -267,7 +241,5 @@ class CtrlpanelCoreTests: XCTestCase {
                 XCTAssertEqual(core.onUpdate.fireCount, 3)
             }
         }
-
-        self.waitForExpectations(timeout: 10)
     }
 }
