@@ -56,4 +56,20 @@ class RandomValuesTests: XCTestCase {
             }
         }
     }
+
+    func testRandomSecretKey() {
+        var core: CtrlpanelCore!
+
+        waitedExpectation(description: "randomSecretKey") {
+            firstly {
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
+            }.then { _ in
+                core.randomSecretKey()
+            }.done { secretKey in
+                XCTAssertEqual(secretKey.count, 30)
+                XCTAssertEqual(secretKey.components(separatedBy: "-").count, 5)
+                XCTAssertEqual(core.onUpdate.fireCount, 0)
+            }
+        }
+    }
 }

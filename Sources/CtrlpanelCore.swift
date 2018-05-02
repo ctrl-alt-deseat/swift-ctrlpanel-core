@@ -101,6 +101,10 @@ open class CtrlpanelCore {
         return self.bridge.call(function: "Ctrlpanel.randomMasterPassword")
     }
 
+    public func randomSecretKey() -> Promise<String> {
+        return self.bridge.call(function: "Ctrlpanel.randomSecretKey")
+    }
+
     public func lock() -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.lock")
