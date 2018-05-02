@@ -82,6 +82,13 @@ window['Ctrlpanel'] = {
     return swiftState(state = await core.sync(state))
   },
 
+  async setPaymentInformation (paymentInformation) {
+    if (state.kind === 'unlocked') await window['Ctrlpanel'].connect()
+    if (state.kind !== 'connected') throw new Error(`Invalid state: ${state.kind}`)
+
+    return swiftState(state = await core.setPaymentInformation(state, paymentInformation))
+  },
+
   accountsForHostname (hostname) {
     const { accounts } = core.getParsedEntries(state)
     const accountList = Object.keys(accounts).map(id => Object.assign({ id }, accounts[id]))

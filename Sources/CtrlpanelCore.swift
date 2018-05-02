@@ -147,6 +147,12 @@ open class CtrlpanelCore {
         }
     }
 
+    public func setPaymentInformation(_ paymentInformation: CtrlpanelPaymentInformation) -> Promise<Void> {
+        return updateState {
+            self.bridge.call(function: "Ctrlpanel.setPaymentInformation", withArg: paymentInformation)
+        }
+    }
+
     public func accountsForHostname(_ hostname: String) -> Promise<[CtrlpanelAccountMatch]> {
         return self.bridge.call(function: "Ctrlpanel.accountsForHostname", withArg: hostname)
     }

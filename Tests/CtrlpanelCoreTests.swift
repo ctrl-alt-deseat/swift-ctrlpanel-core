@@ -127,6 +127,19 @@ class CtrlpanelCoreTests: XCTestCase {
         XCTAssertEqual(match, decoded)
     }
 
+    func testPaymentInformationEncodable() throws {
+        let appleInfo = CtrlpanelPaymentInformation.apple(transactionIdentifier: "x")
+        let stripeInfo = CtrlpanelPaymentInformation.stripe(email: "x", plan: "y", token: "z")
+
+        let encoder = JSONEncoder()
+
+        let appleEncoded = try encoder.encode(appleInfo)
+        let stripeEncoded = try encoder.encode(stripeInfo)
+
+        XCTAssertEqual(String(data: appleEncoded, encoding: .utf8), "{\"type\":\"apple\",\"transactionIdentifier\":\"x\"}")
+        XCTAssertEqual(String(data: stripeEncoded, encoding: .utf8), "{\"email\":\"x\",\"type\":\"stripe\",\"plan\":\"y\",\"token\":\"z\"}")
+    }
+
     func testInboxEntries() {
         var core: CtrlpanelCore!
 
@@ -187,11 +200,17 @@ class CtrlpanelCoreTests: XCTestCase {
                 XCTAssertEqual(core.hasAccount, true)
                 XCTAssertEqual(core.onUpdate.fireCount, 1)
             }.then { _ in
+                core.setPaymentInformation(.apple(transactionIdentifier: "x"))
+            }.done { _ in
+                XCTAssertEqual(core.locked, false)
+                XCTAssertEqual(core.hasAccount, true)
+                XCTAssertEqual(core.onUpdate.fireCount, 2)
+            }.then { _ in
                 core.deleteUser()
             }.done { _ in
                 XCTAssertEqual(core.locked, true)
                 XCTAssertEqual(core.hasAccount, false)
-                XCTAssertEqual(core.onUpdate.fireCount, 2)
+                XCTAssertEqual(core.onUpdate.fireCount, 3)
             }
         }
     }

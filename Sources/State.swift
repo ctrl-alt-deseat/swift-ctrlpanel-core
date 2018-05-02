@@ -71,6 +71,34 @@ public struct CtrlpanelAccountMatch: Codable, Equatable {
     }
 }
 
+public enum CtrlpanelPaymentInformation {
+    case apple(transactionIdentifier: String)
+    case stripe(email: String, plan: String, token: String)
+}
+
+extension CtrlpanelPaymentInformation: Encodable {
+    private enum CodingKeys: String, CodingKey {
+        case type
+        case transactionIdentifier
+        case email, plan, token
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        switch self {
+        case .apple(let transactionIdentifier):
+            try container.encode("apple", forKey: .type)
+            try container.encode(transactionIdentifier, forKey: .transactionIdentifier)
+        case .stripe(let email, let plan, let token):
+            try container.encode("stripe", forKey: .type)
+            try container.encode(email, forKey: .email)
+            try container.encode(plan, forKey: .plan)
+            try container.encode(token, forKey: .token)
+        }
+    }
+}
+
 enum SubscriptionStatus: String, Codable {
     case trialing = "trialing"
     case active = "active"

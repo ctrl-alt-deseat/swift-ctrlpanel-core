@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@ctrlpanel/core": "^0.2.4",
+    "@ctrlpanel/core": "^0.2.5",
     "@ctrlpanel/find-accounts-for-hostname": "^1.1.0",
     "babel-minify-webpack-plugin": "^0.3.1",
     "webpack": "^4.6.0",
