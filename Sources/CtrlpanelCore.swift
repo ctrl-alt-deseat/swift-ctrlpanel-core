@@ -117,6 +117,12 @@ open class CtrlpanelCore {
         }
     }
 
+    public func signup(handle: String, secretKey: String, masterPassword: String, saveDevice: Bool) -> Promise<Void> {
+        return updateState {
+            self.bridge.call(function: "Ctrlpanel.signup", withArgs: (handle, secretKey, masterPassword, saveDevice))
+        }
+    }
+
     public func login(handle: String, secretKey: String, masterPassword: String, saveDevice: Bool) -> Promise<Void> {
         return updateState {
             self.bridge.call(function: "Ctrlpanel.login", withArgs: (handle, secretKey, masterPassword, saveDevice))

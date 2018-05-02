@@ -155,4 +155,44 @@ class CtrlpanelCoreTests: XCTestCase {
             }
         }
     }
+
+    func testSignup() {
+        var core: CtrlpanelCore!
+
+        var handle: String!
+        var secretKey: String!
+        var masterPassword: String!
+
+        waitedExpectation(description: "signup") {
+            firstly {
+                CtrlpanelCore.asyncInit(apiHost: apiHost, deseatmeApiHost: deseatmeApiHost, syncToken: nil).done { core = $0 }
+            }.done { _ in
+                XCTAssertEqual(core.locked, true)
+                XCTAssertEqual(core.hasAccount, false)
+                XCTAssertEqual(core.onUpdate.fireCount, 0)
+            }.then { _ in
+                core.randomHandle().done { handle = $0 }
+            }.then { _ in
+                core.randomSecretKey().done { secretKey = $0 }
+            }.then { _ in
+                core.randomMasterPassword().done { masterPassword = $0 }
+            }.done { _ in
+                XCTAssertEqual(core.locked, true)
+                XCTAssertEqual(core.hasAccount, false)
+                XCTAssertEqual(core.onUpdate.fireCount, 0)
+            }.then { _ in
+                core.signup(handle: handle, secretKey: secretKey, masterPassword: masterPassword, saveDevice: false)
+            }.done { _ in
+                XCTAssertEqual(core.locked, false)
+                XCTAssertEqual(core.hasAccount, true)
+                XCTAssertEqual(core.onUpdate.fireCount, 1)
+            }.then { _ in
+                core.deleteUser()
+            }.done { _ in
+                XCTAssertEqual(core.locked, true)
+                XCTAssertEqual(core.hasAccount, false)
+                XCTAssertEqual(core.onUpdate.fireCount, 2)
+            }
+        }
+    }
 }
