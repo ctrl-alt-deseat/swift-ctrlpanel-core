@@ -64,13 +64,13 @@ window['Ctrlpanel'] = {
   },
 
   async signup (handle, secretKey, masterPassword, saveDevice) {
-    return swiftState(state = await core.signup(state, handle, secretKey, masterPassword, saveDevice))
+    return swiftState(state = await core.signup(state, { handle, secretKey, masterPassword }, saveDevice))
   },
   async login (handle, secretKey, masterPassword, saveDevice) {
-    return swiftState(state = await core.login(state, handle, secretKey, masterPassword, saveDevice))
+    return swiftState(state = await core.login(state, { handle, secretKey, masterPassword }, saveDevice))
   },
   async unlock (masterPassword) {
-    return swiftState(state = await core.unlock(state, masterPassword))
+    return swiftState(state = await core.unlock(state, { masterPassword }))
   },
   async connect () {
     return swiftState(state = await core.connect(state))
