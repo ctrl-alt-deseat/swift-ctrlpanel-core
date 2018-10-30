@@ -4,15 +4,17 @@ public struct CtrlpanelAccount: Codable, Equatable {
     public let handle: String
     public let hostname: String
     public let password: String
+    public let otpauth: URL?
 
-    public init (handle: String, hostname: String, password: String) {
+    public init (handle: String, hostname: String, password: String, otpauth: URL? = nil) {
         self.handle = handle
         self.hostname = hostname
         self.password = password
+        self.otpauth = otpauth
     }
 
     static public func ==(lhs: CtrlpanelAccount, rhs: CtrlpanelAccount) -> Bool {
-        return lhs.handle == rhs.handle && lhs.hostname == rhs.hostname && lhs.password == rhs.password
+        return lhs.handle == rhs.handle && lhs.hostname == rhs.hostname && lhs.password == rhs.password && lhs.otpauth == rhs.otpauth
     }
 }
 
