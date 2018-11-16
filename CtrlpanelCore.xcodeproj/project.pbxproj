@@ -7,145 +7,127 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF_176245980012 /* CtrlpanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_534266335393 /* CtrlpanelCore.swift */; };
-		BF_340829228288 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_345097450918 /* PromiseKit.framework */; };
-		BF_486215110438 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_542052630695 /* State.swift */; };
-		BF_534671818523 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_542052630695 /* State.swift */; };
-		BF_551863875129 /* JSSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_841687221075 /* JSSource.swift */; };
-		BF_558025311791 /* JSBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_638131173870 /* JSBridge.framework */; };
-		BF_664193354045 /* CtrlpanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_534266335393 /* CtrlpanelCore.swift */; };
-		BF_726584555715 = {isa = PBXBuildFile; fileRef = FR_296951278235 /* CtrlpanelCore.framework */; };
-		BF_734410478334 /* JSBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_199841985118 /* JSBridge.framework */; };
-		BF_785906354725 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_794320042762 /* PromiseKit.framework */; };
-		BF_839257793256 = {isa = PBXBuildFile; fileRef = FR_777771946555 /* CtrlpanelCore.framework */; };
-		BF_846441612700 /* JSSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_841687221075 /* JSSource.swift */; };
+		BF_0E05A19B5BCE9FF61FA4C7773A643396 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_7B7200ED60E5A77C5E7FEA93AA1D073E /* State.swift */; };
+		BF_13AA0821A9C1B42C0560E720A1AFD896 /* JSSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A0502FD74D1601A14F1CA2E74DE20AFB /* JSSource.swift */; };
+		BF_1FA33751744E3BC94C5772FDE2C3D973 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_7B7200ED60E5A77C5E7FEA93AA1D073E /* State.swift */; };
+		BF_52A6E05F429CFE0EE036605D00D44BC1 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_7CD6617CD1A136630C337EACFFC4C11C /* PromiseKit.framework */; };
+		BF_5D4E62ECA57731E82466846111882AA0 /* CtrlpanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_52CD20C4A1F318C717056E31A09BC83D /* CtrlpanelCore.swift */; };
+		BF_5D8DF3149F038EFE5EC5C56016A474D2 /* JSBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_43E8A3CE4537F54B0706BACA33855465 /* JSBridge.framework */; };
+		BF_6466FEA672C019C7D663ADB07F41DDC3 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_DB5B253FB4B1AACA76D9D7C1CFF0879E /* PromiseKit.framework */; };
+		BF_96205262A74FB6EC46993C718919A2B9 /* JSSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A0502FD74D1601A14F1CA2E74DE20AFB /* JSSource.swift */; };
+		BF_D9B3999659C1050AA8D0DDE088325154 /* JSBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_F59AFEFEA6FD8199F5D3AD9C94555283 /* JSBridge.framework */; };
+		BF_E370AAEDEBFFF34414E95A1C6E01B60B /* CtrlpanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_52CD20C4A1F318C717056E31A09BC83D /* CtrlpanelCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FR_129992608725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FR_199841985118 /* JSBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSBridge.framework; sourceTree = "<group>"; };
-		FR_296951278235 /* CtrlpanelCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CtrlpanelCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_345097450918 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
-		FR_534266335393 /* CtrlpanelCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtrlpanelCore.swift; sourceTree = "<group>"; };
-		FR_542052630695 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		FR_638131173870 /* JSBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSBridge.framework; sourceTree = "<group>"; };
-		FR_777771946555 /* CtrlpanelCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CtrlpanelCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_794320042762 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
-		FR_841687221075 /* JSSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSSource.swift; sourceTree = "<group>"; };
+		FR_2EF2636815ED621D1747941998D4C642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_43E8A3CE4537F54B0706BACA33855465 /* JSBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSBridge.framework; sourceTree = "<group>"; };
+		FR_4AF23A78FAC11C97C3B689704E91B009 /* CtrlpanelCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CtrlpanelCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_52CD20C4A1F318C717056E31A09BC83D /* CtrlpanelCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtrlpanelCore.swift; sourceTree = "<group>"; };
+		FR_563621B99683D7B987CD43E259EAFCAA /* CtrlpanelCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CtrlpanelCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_7B7200ED60E5A77C5E7FEA93AA1D073E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		FR_7CD6617CD1A136630C337EACFFC4C11C /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
+		FR_A0502FD74D1601A14F1CA2E74DE20AFB /* JSSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSSource.swift; sourceTree = "<group>"; };
+		FR_DB5B253FB4B1AACA76D9D7C1CFF0879E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
+		FR_F59AFEFEA6FD8199F5D3AD9C94555283 /* JSBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSBridge.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FBP_29695127823 /* Frameworks */ = {
+		FBP_61B269CE57FBBD24DC5E4BFB0BAF5DD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_558025311791 /* JSBridge.framework in Frameworks */,
-				BF_340829228288 /* PromiseKit.framework in Frameworks */,
+				BF_D9B3999659C1050AA8D0DDE088325154 /* JSBridge.framework in Frameworks */,
+				BF_52A6E05F429CFE0EE036605D00D44BC1 /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBP_77777194655 /* Frameworks */ = {
+		FBP_B3A6067CA40B15C336D22DC913A2B0C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_734410478334 /* JSBridge.framework in Frameworks */,
-				BF_785906354725 /* PromiseKit.framework in Frameworks */,
+				BF_5D8DF3149F038EFE5EC5C56016A474D2 /* JSBridge.framework in Frameworks */,
+				BF_6466FEA672C019C7D663ADB07F41DDC3 /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		G_1952740716080 /* Frameworks */ = {
+		G_138B58F871AF672CFF9D9B967D47C687 = {
 			isa = PBXGroup;
 			children = (
-				G_2883690153011 /* Carthage */,
+				G_89A1D3F97A8D0977811EB9739C44BA5C /* Sources */,
+				G_FFF3BBCB1D83641C5EBDC606345F5E99 /* Frameworks */,
+				G_ED754E7493A535C09FA601E551A4E34B /* Products */,
 			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		G_2262017438925 /* iOS */ = {
+		G_191F52A356D967AB5D58BF1BDFEF18DD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				FR_638131173870 /* JSBridge.framework */,
-				FR_345097450918 /* PromiseKit.framework */,
+				FR_43E8A3CE4537F54B0706BACA33855465 /* JSBridge.framework */,
+				FR_DB5B253FB4B1AACA76D9D7C1CFF0879E /* PromiseKit.framework */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		G_2262017442691 /* Mac */ = {
+		G_89A1D3F97A8D0977811EB9739C44BA5C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FR_199841985118 /* JSBridge.framework */,
-				FR_794320042762 /* PromiseKit.framework */,
+				FR_52CD20C4A1F318C717056E31A09BC83D /* CtrlpanelCore.swift */,
+				FR_2EF2636815ED621D1747941998D4C642 /* Info.plist */,
+				FR_A0502FD74D1601A14F1CA2E74DE20AFB /* JSSource.swift */,
+				FR_7B7200ED60E5A77C5E7FEA93AA1D073E /* State.swift */,
 			);
-			path = Mac;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		G_2883690153011 /* Carthage */ = {
+		G_99E6A9377B2CDB961C53818D76894BF8 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
-				G_2262017442691 /* Mac */,
-				G_2262017438925 /* iOS */,
+				G_191F52A356D967AB5D58BF1BDFEF18DD /* iOS */,
+				G_A0BFAE4D38FEAFC5CA1C4FB456D81D9B /* Mac */,
 			);
 			name = Carthage;
 			path = Carthage/Build;
 			sourceTree = "<group>";
 		};
-		G_8448771205358 = {
+		G_A0BFAE4D38FEAFC5CA1C4FB456D81D9B /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				G_1952740716080 /* Frameworks */,
-				G_8620238527590 /* Products */,
-				G_8934779235101 /* Sources */,
+				FR_F59AFEFEA6FD8199F5D3AD9C94555283 /* JSBridge.framework */,
+				FR_7CD6617CD1A136630C337EACFFC4C11C /* PromiseKit.framework */,
 			);
+			path = Mac;
 			sourceTree = "<group>";
 		};
-		G_8620238527590 /* Products */ = {
+		G_ED754E7493A535C09FA601E551A4E34B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FR_296951278235 /* CtrlpanelCore.framework */,
-				FR_777771946555 /* CtrlpanelCore.framework */,
+				FR_4AF23A78FAC11C97C3B689704E91B009 /* CtrlpanelCore.framework */,
+				FR_563621B99683D7B987CD43E259EAFCAA /* CtrlpanelCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		G_8934779235101 /* Sources */ = {
+		G_FFF3BBCB1D83641C5EBDC606345F5E99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FR_534266335393 /* CtrlpanelCore.swift */,
-				FR_129992608725 /* Info.plist */,
-				FR_841687221075 /* JSSource.swift */,
-				FR_542052630695 /* State.swift */,
+				G_99E6A9377B2CDB961C53818D76894BF8 /* Carthage */,
 			);
-			path = Sources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		NT_296951278235 /* CtrlpanelCore_iOS */ = {
+		NT_0DF560466A42EBA864A0D32F5FF7CECE /* CtrlpanelCore_macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CL_296951278235 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_iOS" */;
+			buildConfigurationList = CL_323E97BD0E92BFFDF7E496A97BB0DE00 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_macOS" */;
 			buildPhases = (
-				SBP_29695127823 /* Sources */,
-				FBP_29695127823 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CtrlpanelCore_iOS;
-			productName = CtrlpanelCore_iOS;
-			productReference = FR_296951278235 /* CtrlpanelCore.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		NT_777771946555 /* CtrlpanelCore_macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CL_777771946555 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_macOS" */;
-			buildPhases = (
-				SBP_77777194655 /* Sources */,
-				FBP_77777194655 /* Frameworks */,
+				SBP_006CB5507C2984D1F4E73DD7AC5546A3 /* Sources */,
+				FBP_61B269CE57FBBD24DC5E4BFB0BAF5DD8 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,56 +135,101 @@
 			);
 			name = CtrlpanelCore_macOS;
 			productName = CtrlpanelCore_macOS;
-			productReference = FR_777771946555 /* CtrlpanelCore.framework */;
+			productReference = FR_563621B99683D7B987CD43E259EAFCAA /* CtrlpanelCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		NT_4748BA97B53CFA79F925D4BB64F5A93C /* CtrlpanelCore_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_7B82BD6F491539A27F82CA948B36606D /* Build configuration list for PBXNativeTarget "CtrlpanelCore_iOS" */;
+			buildPhases = (
+				SBP_EC9014B8DAFAF8DECF1EE59DF2DAB165 /* Sources */,
+				FBP_B3A6067CA40B15C336D22DC913A2B0C8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CtrlpanelCore_iOS;
+			productName = CtrlpanelCore_iOS;
+			productReference = FR_4AF23A78FAC11C97C3B689704E91B009 /* CtrlpanelCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		P_5997327226270 /* Project object */ = {
+		P_2291A39B4D4C03A6F0649B9301219DD1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 			};
-			buildConfigurationList = CL_599732722627 /* Build configuration list for PBXProject "CtrlpanelCore" */;
+			buildConfigurationList = CL_41677997D6CEA068EABF26F6CDAB2E01 /* Build configuration list for PBXProject "CtrlpanelCore" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
-			mainGroup = G_8448771205358;
+			knownRegions = (
+				en,
+			);
+			mainGroup = G_138B58F871AF672CFF9D9B967D47C687;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				NT_296951278235 /* CtrlpanelCore_iOS */,
-				NT_777771946555 /* CtrlpanelCore_macOS */,
+				NT_4748BA97B53CFA79F925D4BB64F5A93C /* CtrlpanelCore_iOS */,
+				NT_0DF560466A42EBA864A0D32F5FF7CECE /* CtrlpanelCore_macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		SBP_29695127823 /* Sources */ = {
+		SBP_006CB5507C2984D1F4E73DD7AC5546A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_176245980012 /* CtrlpanelCore.swift in Sources */,
-				BF_551863875129 /* JSSource.swift in Sources */,
-				BF_534671818523 /* State.swift in Sources */,
+				BF_5D4E62ECA57731E82466846111882AA0 /* CtrlpanelCore.swift in Sources */,
+				BF_13AA0821A9C1B42C0560E720A1AFD896 /* JSSource.swift in Sources */,
+				BF_1FA33751744E3BC94C5772FDE2C3D973 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		SBP_77777194655 /* Sources */ = {
+		SBP_EC9014B8DAFAF8DECF1EE59DF2DAB165 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_664193354045 /* CtrlpanelCore.swift in Sources */,
-				BF_846441612700 /* JSSource.swift in Sources */,
-				BF_486215110438 /* State.swift in Sources */,
+				BF_E370AAEDEBFFF34414E95A1C6E01B60B /* CtrlpanelCore.swift in Sources */,
+				BF_96205262A74FB6EC46993C718919A2B9 /* JSSource.swift in Sources */,
+				BF_0E05A19B5BCE9FF61FA4C7773A643396 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BC_331190821215 /* Debug */ = {
+		BC_40EE5A57EF8E9E7C3A2763C03DD1BAE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-iOS";
+				PRODUCT_NAME = CtrlpanelCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BC_9EA853983213E6671FE8471D3937884A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -213,7 +240,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -229,7 +255,59 @@
 			};
 			name = Debug;
 		};
-		BC_479945831424 /* Debug */ = {
+		BC_A7C6FE2DB046C36297B544A6EFC35E14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-macOS";
+				PRODUCT_NAME = CtrlpanelCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_C64BEBAA9F119BFCCD57A68817C1F1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-iOS";
+				PRODUCT_NAME = CtrlpanelCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_E3050CD9B70BB1F840AFD1CF13DDCB11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -243,6 +321,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -250,6 +329,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -283,92 +363,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		BC_494446443698 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-iOS";
-				PRODUCT_NAME = CtrlpanelCore;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		BC_623976747838 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-iOS";
-				PRODUCT_NAME = CtrlpanelCore;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Debug;
-		};
-		BC_659055029247 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrlaltdeseat.CtrlpanelCore-macOS";
-				PRODUCT_NAME = CtrlpanelCore;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		BC_881114754245 /* Release */ = {
+		BC_FBB3444E51A836AC1B00F87B352DE0EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -382,6 +381,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -389,6 +389,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -413,7 +414,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -421,34 +422,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CL_296951278235 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_iOS" */ = {
+		CL_323E97BD0E92BFFDF7E496A97BB0DE00 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC_623976747838 /* Debug */,
-				BC_494446443698 /* Release */,
+				BC_9EA853983213E6671FE8471D3937884A /* Debug */,
+				BC_A7C6FE2DB046C36297B544A6EFC35E14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "";
 		};
-		CL_599732722627 /* Build configuration list for PBXProject "CtrlpanelCore" */ = {
+		CL_41677997D6CEA068EABF26F6CDAB2E01 /* Build configuration list for PBXProject "CtrlpanelCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC_479945831424 /* Debug */,
-				BC_881114754245 /* Release */,
+				BC_E3050CD9B70BB1F840AFD1CF13DDCB11 /* Debug */,
+				BC_FBB3444E51A836AC1B00F87B352DE0EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		CL_777771946555 /* Build configuration list for PBXNativeTarget "CtrlpanelCore_macOS" */ = {
+		CL_7B82BD6F491539A27F82CA948B36606D /* Build configuration list for PBXNativeTarget "CtrlpanelCore_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC_331190821215 /* Debug */,
-				BC_659055029247 /* Release */,
+				BC_40EE5A57EF8E9E7C3A2763C03DD1BAE9 /* Debug */,
+				BC_C64BEBAA9F119BFCCD57A68817C1F1F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "";
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = P_5997327226270 /* Project object */;
+	rootObject = P_2291A39B4D4C03A6F0649B9301219DD1 /* Project object */;
 }
