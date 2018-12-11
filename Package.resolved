@@ -21,11 +21,11 @@
       },
       {
         "package": "Signals",
-        "repositoryURL": "https://github.com/LinusU/Signals",
+        "repositoryURL": "https://github.com/artman/Signals",
         "state": {
-          "branch": "app-extension-compat",
-          "revision": "5628b0746036c99f9691c92876ec393d7d12974b",
-          "version": null
+          "branch": null,
+          "revision": "e6266a1346c8480914cda001566a69c4d51fa15c",
+          "version": "6.0.0"
         }
       }
     ]
