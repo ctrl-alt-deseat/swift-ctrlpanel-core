@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/LinusU/JSBridge",
         "state": {
           "branch": null,
-          "revision": "b1a6660e08af766cc3857ab8a3fdb04cc269143d",
-          "version": "1.0.0-alpha.13"
+          "revision": "b50f694c29eab35d39dad11e63d254bc47b420fb",
+          "version": "1.0.0-alpha.15"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/mxcl/PromiseKit",
         "state": {
           "branch": null,
-          "revision": "80d16f9471abcc55d77a6ac6db803429e88c502c",
-          "version": "6.7.0"
+          "revision": "fe1e9c5b62465227cceb7b0e6e79489ba7b824af",
+          "version": "6.8.4"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/artman/Signals",
         "state": {
           "branch": null,
-          "revision": "e6266a1346c8480914cda001566a69c4d51fa15c",
-          "version": "6.0.0"
+          "revision": "e792eb51a64f85d043d17f09f6323b803b9f73b8",
+          "version": "6.1.0"
         }
       }
     ]
