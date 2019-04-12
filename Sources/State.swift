@@ -110,7 +110,7 @@ enum SubscriptionStatus: String, Codable {
 }
 
 enum CtrlpanelState {
-    case empty()
+    case empty
     case locked(handle: String, saveDevice: Bool, secretKey: String, syncToken: String)
     case unlocked(handle: String, parsedEntries: CtrlpanelParsedEntries, saveDevice: Bool, secretKey: String, syncToken: String)
     case connected(handle: String, parsedEntries: CtrlpanelParsedEntries, hasPaymentInformation: Bool, saveDevice: Bool, secretKey: String, subscriptionStatus: SubscriptionStatus, syncToken: String, trialDaysLeft: Int)
@@ -132,7 +132,7 @@ extension CtrlpanelState: Decodable {
 
         switch kind {
         case "empty":
-            self = .empty()
+            self = .empty
         case "locked":
             let handle = try values.decode(String.self, forKey: .handle)
             let saveDevice = try values.decode(Bool.self, forKey: .saveDevice)
